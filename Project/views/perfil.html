@@ -1,0 +1,94 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container-fluid profile">
+  <div class="row">
+      <div class="col-md-12">
+          <div>
+              <h3>Perfil de Cuenta</h3>
+              <hr>
+          </div>
+          {% if result %}
+          <form class="" id="formProfile" name="formProfile">
+              <div class="row">
+
+                  <!-- Contact detail -->
+                  <div class="col-xxl-12 mb-5 mb-xxl-0">
+                      <div class="profile-form px-4 py-4 rounded">
+                          <div class="row g-3">
+                              <h4 class="mb-4 mt-0">Información de Cuenta</h4>
+                              <!-- ID Cuenta -->
+                              <div class="col-md-6">
+                                  <label class="form-label">ID Cuenta</label>
+                                  <input type="text" class="form-control" disabled="disabled" aria-label="ID Cuenta"
+                                      value="{{result.idPersona}}" id="txtIdPersona" name="txtIdPersona">
+                              </div>
+                              <!-- Usuario / Correo Electrónico -->
+                              <div class="col-md-6">
+                                  <label class="form-label">Usuario / Correo Electrónico</label>
+                                  <input type="text" class="form-control" disabled="disabled" aria-label="Usuario"
+                                      value="{{result.usuario}}" id="txtUsuario">
+                              </div>
+                              <!-- Nombre de Cuenta -->
+                              <div class="col-md-6">
+                                  <label class="form-label">Nombre de Cuenta</label>
+                                  <input type="text" class="form-control" aria-label="Nombre" disabled="disabled"
+                                      value="{{user.nombre}}" id="txtNombre">
+                              </div>
+
+                              <!-- Telefono -->
+                              <div class="col-md-6">
+                                  <label for="txtTelCasa" class="form-label">Teléfono / Contacto</label>
+                                  <input type="text" disabled="disabled" class="form-control" placeholder="Telefono"
+                                      value="{{ user.mobile }}" id="txtTelCasa" value="">
+                              </div>
+
+                              <!-- Registro-->
+                              <div class="col-md-6">
+                                  <label class="form-label">Registro</label>
+                                  <input type="text" class="form-control" disabled="disabled"
+                                      value="{{ user.createAt | formatoFecha(true) }}" id="txtRegistro">
+                              </div>
+
+                              <!-- Actualizacion -->
+                              <div class="col-md-6">
+                                  <label class="form-label">Última Actualización</label>
+                                  <input type="text" class="form-control" disabled="disabled"
+                                      value="{{ user.updateAt | formatoFecha(true) }}" id="txtActualizacion">
+                              </div>
+
+                              <!-- Direccion  -->
+                              <div class="col-md-12">
+                                  <label class="form-label">Dirección</label>
+                                  <input type="text" class="form-control" placeholder="Direccion" aria-label="Direccion"
+                                      value="{{ user.direccion }}" id="txtDireccion" name="txtDireccion">
+                              </div>
+
+                              <!-- Acerca de  -->
+                              <div class="col-md-12">
+                                  <label class="form-label">Acerca de {{ user.nombre }}</label>
+                                  <input type="text" class="form-control" placeholder="Descripción breve" id="txtDescripcion" name="txtDescripcion" value="{{ user.informacion }}">
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+                  <hr class="HRseparador">
+                  <div class="d-md-flex justify-content-end text-center form-footer">
+                      <button type="button" class="btn btn-success float-right" id="btnUpdateProfile" name="btnUpdateProfile">
+                          <i class="fas fa-sync"></i> Actualizar
+                      </button>
+                  </div>
+              </div>
+
+
+          </form>
+          {% else %}
+          <div class="error-alert">
+              <p>Error: Usuario no encontrado.</p>
+          </div>
+          {% endif %}
+      </div>
+  </div>
+</div>
+
+{% endblock %}

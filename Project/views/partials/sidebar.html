@@ -1,0 +1,34 @@
+<div class="border-end sidebar-menu" id="sidebar-wrapper" data-color="blue">
+
+    <div class="sidebar-heading border-bottom">
+            <img src="/img/logo-bw.svg" id="logoMain" class="responsive-logo">
+    </div>
+    
+    {% if selected is not defined %}
+        {% set selected = 'dashboard' %}
+    {% endif %}
+
+<div class="list-group list-group-flush">
+    {% set items = [
+        {'label': 'Inicio', 'class': 'dashboard', 'href': '/dashboard/', 'icon': 'fa-home'},
+        {'label': 'Perfil', 'class': 'perfil', 'href': '/dashboard/perfil', 'icon': 'fa-user-circle'},
+        {'label': 'Expediente', 'class': 'expediente', 'href': '/dashboard/expediente', 'icon': 'fa-folder'},
+        {'label': 'Agendar Cita', 'class': 'agendar', 'href': '/dashboard/agendar', 'icon': 'fa-calendar'},
+        {'label': 'Configuración', 'class': 'configuracion', 'href': '/dashboard/configuracion', 'icon': 'fa-gear'},
+        {'label': 'Contacto', 'class': 'contacto', 'href': '/dashboard/contacto', 'icon': 'fa-mobile'}
+    ] %}
+    
+    {% for item in items %}
+        <a class="list-group-item list-group-item-action list-group-item-light p-3 {% if selected == item.class %}active{% endif %}" href="{{ item.href }}"><i class="fa {{ item.icon }}"></i>
+            <p class="title">{{ item.label }}</p>
+        </a>
+    {% endfor %}
+</div>
+
+    <div class="mx-auto text-center p-4">
+        <a class="nav-link" href="/auth/logout" id="logOut">
+            <span class="no-icon btn btn-danger btn-fill">Cerrar Sesi&oacute;n</span>
+        </a>
+    </div>
+    
+</div>

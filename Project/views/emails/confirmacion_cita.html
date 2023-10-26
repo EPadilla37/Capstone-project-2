@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Confirmación de Cita en Imaxess</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        table, td, div, h2, p {
+            font-family: Arial, sans-serif;
+        }
+        
+        .button {
+            background-color: #018293;
+            border: none;
+            color: white;
+            padding: 10px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="margin:0;padding:0;">
+    <table role="presentation" style="font-family: Arial, sans-serif; width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+        <tr>
+            <td align="center" style="padding:0;">
+                <table role="presentation" style="width:602px;border-collapse:collapse;  border-spacing:0;text-align:left;">
+                    <tr>
+                        <td align="center" style="padding:20px 0 20px 0;background:#1c2b5a;">
+                            <img src="http://agendaimaxess.ddns.net/clubimaxess/img/mail/logo_imaxess.png?v=3" alt="" width="30%" style="height:auto;display:block;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:36px 30px 12px 30px;">
+                            <table role="presentation" style="width:602px;border-collapse:collapse;  border-spacing:0;text-align:left;">
+                                <tr>
+                                    <td style="padding:0 0 36px 0;color:#153643;">
+                                        <h2 style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif; color:#018293;">Club Imaxess - Confirmación de cita</h2>
+                                        <p align="justify"  style="font-family: Arial, sans-serif; margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;">
+                                            Hola, <b>{{ confirmacion.paciente.nombre + " " + confirmacion.paciente.apellido_paterno + " " + confirmacion.paciente.apellido_materno }} </b>.
+                                            <br><br>
+                                            <b>Nos alegra tener la posibilidad de atenderle</b>
+                                            <br>
+                                            Favor de revisar que los datos estén capturados adecuadamente, tanto los personales, los de estudios a realizarse así como el día y la hora de su cita. En caso de algún error, aclaración o necesidad de re-agendar, ayúdenos comunicándose al 664 6341118 ext 1 al menos 2 horas previas, al horario registrado en este comunicado.
+                                        </p>
+                                        <h3>Detalle de cita agendada</h3>
+
+                                        <table role="presentation" style="width:100%;border-collapse:collapse;border:1;border-spacing:0;font-size:14px;font-family:Arial,sans-serif;">
+                                            <tr>
+                                                <td style="padding:10px;background:#F4F6F6;">
+                                                    No. Cita:
+                                                </td>
+                                                <td style="padding:10px;background:#FDFEFE; border-bottom:2px solid #cfcfcf; color:#1c2b5a;">
+                                                    {{ confirmacion.solicitud }}    
+                                                </td>
+                                                <td style="padding:10px;background:#F4F6F6;">
+                                                    Paciente:
+                                                </td>
+                                                <td style="padding:10px;background:#FDFEFE; border-bottom:1px solid #cfcfcf;  color:#1c2b5a;">
+                                                    {{ confirmacion.paciente.nombre + " " + confirmacion.paciente.apellido_paterno + " " + confirmacion.paciente.apellido_materno }} 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:10px;background:#F4F6F6;">
+                                                    Fecha de la Cita:
+                                                </td>
+                                                <td style="padding:10px;background:#FDFEFE;  border-bottom:1px solid #cfcfcf; color:#1c2b5a;">
+                                                    {{ confirmacion.fecha_agendada | formatoFecha }} 
+                                                </td>
+                                                <td style="padding:10px;background:#F4F6F6;">
+                                                    Hora:
+                                                </td>
+                                                <td style="padding:10px;background:#FDFEFE;  border-bottom:1px solid #cfcfcf; color:#1c2b5a;">
+                                                    {{ confirmacion.hora_inicio | formatoHora12Horas  }} 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:10px;background:#F4F6F6;">
+                                                    Fecha de Nacimiento:
+                                                </td>
+                                                <td style="padding:10px;background:#FDFEFE;  border-bottom:1px solid #cfcfcf; color:#1c2b5a;">
+                                                    {{ confirmacion.paciente.fecha_nacimiento | formatoFecha  }} 
+                                                </td>
+                                                <td style="padding:10px;background:#F4F6F6;">
+                                                    Tel&eacute;fono:
+                                                </td>
+                                                <td style="padding:10px;background:#FDFEFE;  border-bottom:1px solid #cfcfcf; color:#1c2b5a;">
+                                                    {{ confirmacion.tel_contacto | safe }} 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                    <h3>Estudios agendados <b style="color:#018293;">{{ confirmacion.modalidad | safe }}</b></h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <table role="presentation" style="width:100%;border-collapse:collapse;border:1;border-spacing:0;font-size:14px;font-family:Arial,sans-serif;">
+                                                        {% for estudio in confirmacion.estudios %}
+                                                        <tr style="border-bottom:1px solid #cfcfcf; color:#1c2b5a;">
+                                                            <td style="padding:10px;">{{ loop.index }}.- ESTUDIO</td>
+                                                            <td colspan="2">{{ estudio.id_modalidad }} - {{ estudio.descripcion }}</td>
+                                                            <td>
+                                                                {% if estudio.url_indicaciones != 'NA' %}
+                                                                <a class="button" style="color:#FFF;text-decoration:none;" href="{{ estudio.url_indicaciones }}?v=2" target="_blank">VER INDICACIONES</a>
+                                                                {% else %}
+                                                                SIN INDICACIONES
+                                                                {% endif %}
+                                                            </td>
+                                                        </tr>
+                                                        {% endfor %}
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                    <i>
+                                                        Favor de revisar las indicaciones para estudio ya que, de no cumplir con los preparativos,
+                                                        es posible que no podamos atenderle al presentarse.
+                                                    </i>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br><br>
+                                        <i>
+                                            En caso de recibir esta confirmación por error puede hacer caso omiso al comunicado o aclararlo llamando al 664 6341118 ext 1 si lo considera necesario.
+                                        </i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:20px;background:#018293;">
+                            <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;">								
+                                <tr>
+                                    <td style="padding:0; width:14%; color:#FFF;" align="left">
+                                        <table role="presentation" style="border-collapse:collapse;border:1;border-spacing:0;">
+                                            <tr>
+                                                <td style="padding:0 0 0 0px; width:60px;">
+                                                    <img class="iconiconim1" style="max-width: 100%; background-size: 100%; " alt="" src="http://agendaimaxess.ddns.net/clubimaxess/img/icon/iconim1.png">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="padding:0;width:43%; color:#FFF;" align="left">
+                                        <p style="font-family: Arial, sans-serif; margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
+                                            Imaxess - diagnóstico por imagen<br/>
+                                            <a style="color:#ffffff;text-decoration:underline;" href="http://www.imaxess.com">www.imaxess.com</a>
+                                        </p>
+                                    </td>
+                                    <td style="padding:0;width:43%;" align="right">
+                                        <table role="presentation" style="border-collapse:collapse;border:0;border-spacing:0;">
+                                            <tr>
+                                                <td style="font-family: Arial, sans-serif; margin:0;font-size:16px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;">
+                                                    <i>amamos la vida</i>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "login/loginhome.html" %}
+{% block content %}
+<div class="container containerLogin">
+    <div class="row boxSizing">
+        <div class="logo_mobile d-md-none mx-auto">
+            <img src="/img/logo-bw.svg" id="loginLogo">
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-8 banner_mobile">
+            <img src="/img/banner-clubimaxess.svg">
+            <br><br>
+            <hr>
+        </div>
+        <div class="col-md-9 col-md-offset-3">
+
+                <div class="middle">
+                    <div id="login">
+                        <form class="form" method="post" action="/auth/login" id="formLogin">
+                            <fieldset class="clearfix">
+                                <p><span class="fa fa-user"></span><input type="text" name="username" id="username" Placeholder="Username" value="imaxessprivado@imaxess.com" required></p>
+                                <p><span class="fa fa-lock"></span><input type="password" name="password" id="password" Placeholder="Password" value="pass123" required></p>
+                                <div class="text-right">
+                                    <span style="width:50%; text-align:right; display: inline-block;">
+                                        <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success">Iniciar Sesi&oacute;n</button>
+                                    </span>
+                                </div>
+                            </fieldset>
+                            <div class="error-alert"></div>
+                        </form>
+                    </div> 
+                    <div class="logo">
+                        <img src="/img/logo-bw.svg" id="loginLogo">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+           
+            </div>
+
+        </div>
+</div>
+{% endblock %}

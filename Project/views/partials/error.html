@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container-fluid error">
+    <table class="table-responsive tblError">
+        <tr><td class="err_img"><img src="/img/error_media.svg" alt="" class="error_media"></td></tr>
+        <tr><td><h1 class="err_title">{{ status }} : {{ customTitle }}</h1></td></tr>
+        <tr><td><p class="err_message">{{ customMessage }}</p></td></tr>
+    </table>
+    <p>
+        <a href="{{ referrer }}" class="btn btn-outline-primary err_link">
+            <i class="fas fa-reply fa-lg"></i> Volver a la página anterior
+        </a>
+    </p>
+</div>
+{% endblock %}

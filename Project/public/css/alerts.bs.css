@@ -1,0 +1,63 @@
+/*
+    Boostrap Alert Colors
+*/
+
+#msgNotifyHome {
+    font: 87.5%/1.5em 'Open Sans', sans-serif;
+}
+
+.alert_bs{
+    border-color: none !important;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+
+.alert_bs .fa{
+    font-size: 2.2rem;
+}
+
+.alert[data-type="info"] {
+    background: linear-gradient(to bottom right,#007bff,#1d93d2);
+    color:#FFF !important;
+    border: none !important;
+}
+
+.alert[data-type="warning"] {
+    background: linear-gradient(to bottom right,#FF9500,#FC0);
+    color: #343a40!important;
+}
+
+.alert[data-type="danger"] {
+    background: linear-gradient(to bottom right,#FF2A68,#b52b0c);
+    color:#FFF !important;
+    border: none !important;
+}
+
+.alert[data-type="success"] {
+    background: linear-gradient(to bottom right,#28a745,#84b42d);
+    background: linear-gradient(to bottom right,#0f5a20,#0eb70d);
+    color: #FFF !important;
+    border: none !important;
+    
+}
+
+#msgAlertLogin{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    margin-left: auto; 
+    margin-right: auto; 
+    z-index: 9999;
+  }
+
+#msgNotifyHome{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    margin-left: auto; 
+    margin-right: auto; 
+    z-index: 9999;
+}

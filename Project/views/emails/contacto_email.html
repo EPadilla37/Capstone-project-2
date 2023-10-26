@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubImaxess - Contacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .card {
+            border: 1px solid #dddddd;
+            margin-top: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .card-text {
+            font-size: 16px;
+            color: #555;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        /* Estilos adicionales */
+        .contact-email {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-text strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Pie de página */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid contact-email">
+    <div class="container mt-5">
+        <h2>ClubImaxess</h2>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{{ email.subject }}</h4>
+                <p class="card-text"><strong>Nombre:</strong> {{ email.name | title }}</p>
+                <p class="card-text"><strong>Teléfono:</strong> {{ email.contactPhone }}</p>
+                <p class="card-text">{{ email.message }}</p>
+                <p class="card-text">*Este correo electrónico ha sido enviado desde ClubImaxess Contacto.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pie de página -->
+<div class="footer mb-4">
+    <p><strong>Teléfono:</strong> 634 1118</p>
+    <p><strong>Dirección:</strong> Ave. Guanajuato #2251, Local B, C y D,<br>Col. Madero, 22040 Tijuana B. C.</p>
+    <br><br>
+</div>
+</body>
+</html>

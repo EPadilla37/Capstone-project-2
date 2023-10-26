@@ -1,0 +1,74 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container-fluid studiesrecord">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Mi Expediente</h4>
+                    <p class="card-category">
+                        Listado de Estudios
+                    <label id="lblCount" class="font-weight-bold"></label></p>
+                    <hr>
+                </div>
+                <div id="divDTAlert"></div>
+                <div class="row">
+                    <div id="search_mobile" class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <input id="inputSearch" class="form-control border-end-0 border" type="search" placeholder="Buscar Paciente">
+                                    <span class="input-group-append">
+                                        <button id="btnSearch" class="btn btn-outline-secondary btn-info bg-white  border-start-0 border-bottom-0 border ms-n5" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card bootstrap-table">
+                            <div class="card-body table-full-width">
+                                <div class="table-responsive-sm">
+                                    <div class="toolbar"></div>
+                                    <table id="tbl-vcardsmanager" class="table table-striped table-hover mrInstitution">
+                                        <caption><label id="lblCount" class="font-weight-bold"></label></caption>
+                                        <thead id="tblHeader">
+                                            <tr class="tblTrHeader">
+                                                <th class="tblColHeader text-center">ID</th>
+                                                <th class="tblColHeader" id="col_patient">Paciente</th>
+                                                <th class="tblColHeader">Estudio</th>
+                                                <th class="tblColHeader">Fecha</th>
+                                                <th class="tblColHeader td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbEstudios" name="tbEstudios" class="table_search">
+                                            {% for row in result %}
+                                            <tr>
+                                                <td class="text-center">{{ row.id_cita }}</td>
+                                                <td>{{ row.fullName }}</td>
+                                                <td>{{ row.id_modalidad }}, {{ row.estudio }}</td>
+                                                <td>{{ row.fecha }}</td>
+                                                <td class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">
+                                                    <a rel="tooltip" title="Ver Online" class="btn btn-link btn-info link_white table-action link" href="{{ row.viewer_url }}" id="link{{ row.id }}" name="link{{ row.id }}" target="_blank" data-original-title="Ver"><i class="fa fa-eye"></i></a>
+                                                    <a rel="tooltip" title="Copiar Link" class="btn btn-link btn-warning link_white table-action copy" id="copyButton" href="#" data-original-title="Copiar"><i class="fa fa-copy"></i></a>
+                                                    <a rel="tooltip" title="Ver Reporte" class="btn btn-link btn-primary link_white table-action open getLinkReporte" id="reporte{{ row.id }}" name="reporte{{ row.id }}" data-idSolicitud="{{ row.id_cita }}" data-idEstudio="{{ row.id_estudio }}"><i class="fa fa-file-text"></i></a>
+                                                    <!-- <a rel="tooltip" title="Compartir por WhatsApp" class="btn btn-link btn-success link_white table-action share" id="shareWA" href="#" data-original-title="Compartir"><i class="fa fa-whatsapp"></i></a> -->
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/functions.js"></script>
+{% endblock %}

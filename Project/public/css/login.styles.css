@@ -1,0 +1,269 @@
+div.loginmain {
+    background: #0264d6;
+    background: radial-gradient(ellipse at center, #0264d6 1%, #1c2b5a 100%);
+    height: calc(100vh);
+    width: 100%;
+}
+
+/* ---------- GENERAL ---------- */
+
+*:not(.alert) {
+    box-sizing: border-box;
+    margin: 0px auto;
+}
+
+body {
+    color: #606468;
+    font: 87.5%/1.5em 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+a {
+    color: #eee;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input {
+    border: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    padding: 0;
+    /*-webkit-appearance: none;*/
+}
+
+p {
+    line-height: 2em;
+}
+
+/*
+.clearfix {
+    *zoom: 1;
+}
+*/
+.clearfix:before,
+.clearfix:after {
+    content: ' ';
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.containerLogin {
+    left: 50%;
+    position: fixed;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+/* ---------- LOGIN ---------- */
+
+#login form {
+    width: 250px;
+}
+
+#login,
+.logo {
+    display: inline-block;
+    width: 40%;
+}
+
+#login {
+    border-right: 1px solid #fff;
+    padding: 0px 22px;
+    width: 59%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 50px;
+    line-height: 125px;
+    display: inline-flex;
+}
+
+#login form span.fa {
+    background-color: #fff;
+    border-radius: 3px 0px 0px 3px;
+    color: #000;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+}
+
+#login form input {
+    height: 50px;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+#login form input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background-color: #fff;
+    border-radius: 0px 3px 3px 0px;
+    color: #000;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 200px;
+}
+
+#login2 form input[type="submit"] {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #000000;
+    color: #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    height: 30px;
+}
+
+#login form input[type="submit"]:hover {
+    background-color: #d44179;
+}
+
+#login>p {
+    text-align: center;
+}
+
+#login>p span {
+    padding-left: 5px;
+}
+
+.middle {
+    width: 600px;
+}
+
+.alert-title-white {
+    color: #FFF !important;
+}
+
+#msgAlert {
+    z-index: 1;
+    position: relative;
+    margin: 20px 0px;
+}
+
+#msgAlert .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+.error{
+    color:#02fdcf;
+    font-weight:bold;
+}
+
+
+
+@media (max-width: 991px) {
+    .logo_mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #login{
+        border:none;
+    }
+
+    .logo_mobile{
+        display: block;
+    }
+
+    .logo_mobile img{
+        width: 90%;
+        margin: 20px;
+    }
+
+    .banner_mobile img{
+        max-width: 85%;
+    }
+
+    .logo{
+        display: none;
+    }
+
+
+}
+
+/*
+    Particle IA
+*/
+
+.particle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.particle {
+    position: absolute;
+    background-color: #fff; /* Color de las partículas */
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    animation: particle-animation 5s linear infinite; /* Duración y tipo de animación */
+}
+
+@keyframes particle-animation {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100vw) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes generate-particles {
+    0%, 100% {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background-color: #fff;
+        animation: particle-animation 5s linear infinite;
+    }
+    10% {
+        transform: translate(10vw, 0) scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(20vw, 0) scale(0);
+        opacity: 0;
+    }
+}
+
+.particle-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: generate-particles 5s linear infinite;
+}

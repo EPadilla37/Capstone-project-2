@@ -1,0 +1,192 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container-fluid schedule_addstudy">
+    <div class="row">
+
+        <div class="col-md-12">
+            <br>
+            <div class="card3">
+                <div class="card-header">
+                    <h4 class="card-title">Nueva Cita</h4>
+                </div>
+                <div class="card-body wz_dt_table_body">
+                    <table id="wz_dt_table" class="table">
+                        <tr class="wz_dt_table_header">
+                            <td>ID PACIENTE</td>
+                            <td>NOMBRE</td>
+                            <td>FECHA DE NACIMIENTO</td>
+                            <td>SEXO</td>
+                        </tr>
+                        <tr class="wz_dt_table_info">
+                            <td id="wz_ptIDd">{{paciente.id_paciente }}</td>
+                            <td id="wz_ptName">{{paciente.nombre + " " + paciente.apellido_paterno + " " + paciente.apellido_materno}}</td>
+                            <td id="wz_ptDoB">{{paciente.fecha_nacimiento}}</td>
+                            <td id="wz_ptSex">{{paciente.sexo}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <hr>
+            </div>
+
+
+            <div id="divDTAlert"></div>
+
+            <div class="col-md-12" id="ws_step_two">
+
+                <div class="col-lg-12 title-entry step_header d-flex p-1">
+                    <input type="hidden" name="txtIDPacienteSearch" id="txtIDPacienteSearch" value="" readonly>
+                    <div class="tutorial-steps">
+                        <div class="step-number">
+                            2
+                        </div>
+                        <div class="step-description">
+                            <p>Paso 2: Selecionar estudios a realizar.</p>
+                        </div>
+                    </div>
+                </div>                    
+
+                <div class="col-lg-12 frm_step2_container d-flex p-1">
+                    <br>
+                    <form id="wz_sf_procedures" name="wz_sf_procedures" role="form-inline">
+                        <div class="modal-body2">
+                            <div class="row step2">
+                                <div class="col-lg-12 title-entry divSelSala">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-12 stSala"><b>Modalidad</b></div>
+                                        <div class="col-lg-8 col-sm-12">
+                                            <select class="form-control frm-input-schedule" id="ddlModalidades" required>
+                                                <option value="SELECCIONAR MODALIDAD" id="defaultModalidadOption">SELECCIONAR MODALIDAD</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2"><input type="hidden" id="space" />&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 title-entry divSelEstudio">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-12 stEstudio"><b>&nbsp;&nbsp;Estudio</b></div>
+                                        <div class="col-lg-8 col-sm-12"> 
+                                            <select class="form-control frm-input-schedule selectpicker show-tick" id="ddlEstudios">
+                                                <option value="">SELECCIONAR ESTUDIO</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <button type="button" id="addEstudio" class="btn btn-success btn-fill btn-block">
+                                                <i class="fas fa-plus"></i> Agregar
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-2"><input type="hidden" id="txtSelectedID" />&nbsp;</div>
+                                        <div class="col-lg-3 py-md-1 col-sm-6 col-xs-6">Duraci&oacute;n : <label id="lbDuracion" class="detalle">NA</label></div>
+                                        <div class="col-lg-4 py-md-1 col-sm-6 col-xs-6">Costo de estudio : <label id="lbCosto" class="detalle">NA</label></div>
+                                        <div class="col-lg-3">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <hr class="HRseparador">
+                                <div class="col-lg-12 title-entry divShoppingCart">
+                                    <div id="tblShoppingCart" class="table-wrapper">
+                                        <div class="table-title">
+                                            <div class="row">
+                                                <div class="col-sm-8"><h2>Estudios Seleccionados</h2></div>
+                                                <div class="col-sm-4">
+                                                    <button type="button" id="btnEmpty" class="cart-action btn btn-outline-danger btn-2 btn-block">
+                                                        <i class="fas fa-trash-alt"></i> Quitar Todo
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table table-responsive table-hover">
+                                            <thead class="tblEncabezados">
+                                                <tr>
+                                                    <th>ESTUDIO</th>
+                                                    <th>DURACION</th>
+                                                    <th>PRECIO</th>
+                                                    <th>ACCIONES</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tblEstudios">
+                                                <tr><td colspan="4">No se encontrar&oacute;n registros</td></tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- Separate div for the Total row -->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table class="table">
+                                                    <tbody>
+                                                        <tr id="totalRow">
+                                                            <td>Totales</td>
+                                                            <td id="totalTiempo">0 min</td>
+                                                            <td id="totalPrecio">0 MXN</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <hr>
+
+            </div>
+
+            <div class="col-md-12 d-flex justify-content-between" id="frm_footer_actions">											
+                <button type="button" id="btnCancelarEstudio" class="btn btn-danger btn-fill">Cancelar</button>
+                <!-- <a href="/agenda/agendarCita" id="btnPasoAgendar" class="btn btn-success btn-fill pull-right">Paso 3 : Agendar Cita</a> -->
+                <a id="btnPasoAgendar" class="btn btn-success btn-fill pull-right">Paso 3 : Agendar Cita</a>
+            </div>
+
+           <!-- Modal de confirmar -->
+            <div id="imageModal" class="modal fade " tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Confirmar Indicaciones:</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div id="imageContainer" style="max-height: 600px; overflow-y: auto;">
+                                <!-- Images will be added here -->
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <div class="left-buttons">
+                                <button id="btnModalCancel" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <a href="/agenda/agendarCita" id="btnModalConfirmar" type="button" class="btn btn-success btn-fill">Confirmar</a>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <label>
+                                    <input id="checkboxIndicaciones" type="checkbox">
+                                    He leído las indicaciones para los estudios
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="endtime2" class="modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header title-clock">
+                            <h5 class="modal-title">Cita Bloqueada</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>El tiempo de confirmación ha expirado (2 minutos).<br>Por favor, regrese al <b>Paso 3: Agendar Cita</b>.</p>
+                        </div>
+                        <div id="#endtime_footer" class="modal-footer footer_endtime">
+                            <a href="/agenda/agendarCita" id="btnEndTime" class="btn btn-secondary btn-fill pull-right"><i class="fas fa-arrow-left"></i> Regresar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

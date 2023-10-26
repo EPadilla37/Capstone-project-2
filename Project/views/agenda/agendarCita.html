@@ -1,0 +1,212 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container-fluid schedule_addcita">
+    <div class="row">
+
+                    <div class="col-md-12">
+                        <br>
+                        <div class="card3">
+                            <div class="card-header">
+                                <h4 class="card-title">Nueva Cita</h4>
+                            </div>
+                            <div class="card-body wz_dt_table_body">
+                                <table id="wz_dt_table" class="table">
+                                    <tr class="wz_dt_table_header">
+                                        <td>ID PACIENTE</td>
+                                        <td>NOMBRE</td>
+                                        <td>FECHA DE NACIMIENTO</td>
+                                        <td>SEXO</td>
+                                    </tr>
+                                    <tr class="wz_dt_table_info">
+                                        <td id="wz_ptIDd">{{paciente.id_paciente }}</td>
+                                        <td id="wz_ptName">{{paciente.nombre + " " + paciente.apellido_paterno + " " + paciente.apellido_materno}}</td>
+                                        <td id="wz_ptDoB">{{paciente.fecha_nacimiento}}</td>
+                                        <td id="wz_ptSex">{{paciente.sexo}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr>
+                        </div>
+            
+            
+                        <div id="divDTAlert"></div>
+                        
+                        <div class="col-md-12" id="ws_step_three">
+
+                            <div class="col-lg-12 title-entry step_header d-flex p-1">
+                                <!--<input type="hidden" name="txtIDPacienteSearch" id="txtIDPacienteSearch" value="" readonly>-->
+                                <input type="hidden" name="idModSelected" id="idModSelected" value="{{ modalidad.id }}" readonly>
+                                <input type="hidden" name="dateSelected" id="dateSelected" value="{{ defaultToday }}" readonly>
+                                <input type="hidden" name="timeSelected" id="timeSelected" readonly>
+                                <input type="hidden" name="totalTime" id="totalTime" value="{{ totales.totalDuracion }}">
+                                <input type="hidden" name="totalPrice" id="totalPrice" value="{{ totales.totalPrecio }}">
+                                <input type="hidden" name="idNewCita" id="idNewCita">
+
+                                <div class="tutorial-steps">
+                                    <div class="step-number">
+                                        3
+                                    </div>
+                                    <div class="step-description">
+                                        <p>Paso 3: Agendar Cita - <label class="font-blue"><strong>{{ modalidad.descripcion }}</strong></label></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 frm_step3_container d-flex p-1">
+                                <br>
+                                <form id="frmAddCita" name="frmAddCita" role="form-inline">
+                                    <div class="modal-body2">
+                                        <div class="row step3">
+                                            <hr class="HRseparador">
+                                            <div class="col-lg-12 title-entry divShoppingCart">
+                                                <div id="tblShoppingCart" class="table-wrapper">
+                                                    <div class="table-title">
+                                                        <div class="row">
+                                                            <div class="col-sm-8"><h2>Estudios Seleccionados</h2></div>
+                                                            <div class="col-sm-4"></div>
+                                                        </div>
+                                                    </div>
+                                                    <table id="tblEstSelect" class="table table-responsive table-hover">
+                                                        <thead class="tblEncabezados">
+                                                            <tr>
+                                                                <th>ESTUDIO</th>
+                                                                <th>DURACION</th>
+                                                                <th>PRECIO</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tblEstudiosSession">
+                                                            {% for estudio in studiesList %}
+                                                            <tr> 
+                                                                <td>{{ estudio.id_modalidad}} {{ estudio.descripcion }}</td>
+                                                                <td class="">{{ estudio.duracion | formatoHoraMinutos }}</td>
+                                                                <td>{{ estudio.precio | formatoMoneda }}</td>
+                                                            </tr>
+                                                            {% endfor %}
+                                                            <tr id="totalRow">
+                                                                <td>Totales</td>
+                                                                <td id="totalTiempo">{{ totales.totalDuracion | formatoHoraMinutos }}</td>
+                                                                <td id="totalPrecio">{{ totales.totalPrecio | formatoMoneda }}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <br><hr>
+
+                                            <div class="col-lg-12 title-entry divCalendarSchedule">
+                                                <div class="row">
+                                                    <div class="col-md-12 table-title cal-encabezado">
+                                                        <h2>Disponibilidad de Agenda</h2>
+                                                    </div>
+                                                    <div class="col-md-12 col-lg-6 d-flex justify-content-center cal-calendario">
+                                                        <div id="scheduleCal" class="">
+                                                            <input id="dpAgendarCita" class="flatpickr flatpickr-input" type="text" placeholder="Seleccionar Fecha.." readonly="readonly" hidden>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-6 cal-horarios">
+                                                        <table id="tblDisponibilidad" class="table table-responsive table-fixed">
+                                                            <thead class="thead">
+                                                                <tr>
+                                                                    <td id="titleHead" class="">
+                                                                        <b>HORARIOS DISPONIBLE</b>
+                                                                        <br>
+                                                                        <label id="lblCurDate">-- Seleccionar Fecha --</label>
+                                                                    </td>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="tbodyHorasDisponibles"  name="tbodyHorasDisponibles" class=""></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                            
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="col-md-12 d-flex justify-content-between" id="frm_footer_actions">											
+                            <button type="button" id="btnCancelarCita" class="btn btn-danger btn-fill">Cancelar</button>
+                            <!-- <button type="button" id="btnTestFinalizar" class="btn btn-warning btn-fill pull-right">Test Guardar</button> -->
+                        </div>
+
+                        <div id="endtime" class="modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header title-clock">
+                                        <h5 class="modal-title">Cita Bloqueada</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>El tiempo de confirmación ha expirado (2 minutos).<br>Por favor, regrese al <b>Paso 3: Agendar Cita</b>.</p>
+                                    </div>
+                                    <div id="#endtime_footer" class="modal-footer footer_endtime">
+                                        <a href="/agenda/agendarCita" id="btnEndTime" class="btn btn-secondary btn-fill pull-right"><i class="fas fa-arrow-left"></i> Regresar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modal fade" id="mdlConfirmAppointment" tabindex="-1" role="dialog" aria-labelledby="confirmAppointment" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="">CONFIRMAR HORARIO</h5>
+                                        <div id="timer">
+                                            <b>Tiempo Disponible</b> 
+                                            <div class="clock-wrapper">
+                                                <span id="timerCount">0:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table id="mdlTblBody" class="table">
+                                            <tr>
+                                                <td class="mdlTblHeader" colspan="2">PACIENTE</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mdlTblValue" id="mdlpacienteName" colspan="2">
+                                                    {{paciente.nombre + " " + paciente.apellido_paterno + " " + paciente.apellido_materno}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mdlTblHeader" colspan="2">FECHA</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mdlSelDate mdlTblValue" id="mdlTblDate"></td>
+                                                <td class="mdlSelTime mdlTblValue" id="mdlTblTime"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mdlTblHeader" colspan="2"><hr>ESTUDIOS</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <table class="table table-responsive" id="mdlTblEstudios">
+                                                        <thead class="mdlTblEncabezados">
+                                                            <tr>
+                                                                <th>ESTUDIO</th>
+                                                                <th>DURACION</th>
+                                                                <th>PRECIO</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="mdlBodyTblEstudios"></tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer mdl-actions">
+                                        <button id="btnModalCancel" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                        <button id="btnModalConfirmar" type="button" class="btn btn-success btn-fill">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+    </div>
+</div>
+{% endblock %}

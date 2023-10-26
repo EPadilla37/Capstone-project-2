@@ -1,0 +1,787 @@
+:root {
+  --blue: #0264d6;
+  --cyan: #008495;
+  --navi:#1f295e;
+  --cyanLight:#1dafc0;
+  --gold: rgba(255, 215, 0, 0.5);
+}
+
+ @import url('https://fonts.cdnfonts.com/css/nexa-bold?styles=29919,29913'); 
+ 
+ body{
+  font-family: 'Nexa', sans-serif;
+ }
+
+ .font-blue{
+  color:var(--blue);
+ }
+ .font-cyan{
+  color:var(--cyan);
+ }
+ .font-cyanLigth{
+  color:var(--cyanLight);
+ }
+ .font-navi{
+  color:var(--navi);
+ }
+ .font-gold{
+  color:var(--gold);
+ }
+
+/*Estilos Personalizados*/
+.btn_hover_outline_success:hover {
+  background-color: transparent;
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.btn_hover_outline_primary:hover {
+  background-color: transparent;
+  border-color: #0264d6;
+  color: #0264d6;
+}
+
+.btn-info{
+  color: #FFF;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+/* ------------------------------------------------------
+App Home  -- home template - layout
+-------------------------------------------------------*/
+.sidebar,
+body>.navbar-collapse {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 260px;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    font-weight: 200;
+    background-size: cover;
+    background-position: center center;
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+
+
+  
+}
+
+/*logo responsive */
+.responsive-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto 10px;
+}
+
+
+#sidebar-wrapper #logoMain {
+  max-width: 80%;
+}
+
+.border-bottom{
+  border-bottom:var(--cyan) 1px solid !important;
+}
+
+#sidebar-wrapper {
+
+  background: var(--blue);
+    background: -moz-radial-gradient(center, ellipse cover, var(--blue) 1%, #1c2b5a 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, var(--blue)), color-stop(100%, #1c2b5a));
+    background: -webkit-radial-gradient(center, ellipse cover, var(--blue) 1%, #1c2b5a 100%);
+    background: -o-radial-gradient(center, ellipse cover, var(--blue) 1%, #1c2b5a 100%);
+    background: -ms-radial-gradient(center, ellipse cover, var(--blue) 1%, #1c2b5a 100%);
+    background: radial-gradient(ellipse at center, var(--blue) 1%, #1c2b5a 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=var(--blue), endColorstr='#1c2b5a', GradientType=1);
+}
+
+#sidebar-wrapper .sidebar-heading {
+  border-bottom: 0px solid #ccc;
+  padding: 10px;
+}
+
+#sidebar-wrapper .list-group-item {
+  background-color: transparent; 
+  color: #fff;
+  border: none; 
+  display: flex; 
+  align-items: center; 
+  justify-content: left; 
+  padding: 10px;
+}
+
+#sidebar-wrapper .list-group-item i {
+  margin-right: 10px;
+  font-size: 20px; 
+}
+
+#sidebar-wrapper .list-group-item a {
+  text-decoration: none;
+  color: #fff;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+#sidebar-wrapper .list-group-item:hover{
+  background-color: rgba(255, 255, 255, .2);
+  color: #fff;
+}
+
+#sidebar-wrapper .list-group-item .title{
+  margin-top: revert;
+  font-size: 1.05rem;
+  text-transform:capitalize;
+}
+
+#sidebar-wrapper .list-group-item i {
+  margin-right: 12px;
+  width: 32px;
+}
+
+#sidebar-wrapper .list-group-item i.fa {
+  font-size: 1.4em;
+}
+
+#sidebar-wrapper .list-group-item.active {
+  background-color: rgba(255, 255, 255, .2);
+  color: #fff;
+  border-right: 10px solid var(--cyanLight);
+}
+
+#sidebar-wrapper #logOut {
+  text-align: center;
+}
+
+.navbar-brand{
+  padding-left: 20px;
+  font-weight:normal;
+  color: var(--navi) !important;
+}
+
+.nav-username{
+  padding-left: 20px !important;
+  color:var(--navi) !important;
+  font-weight: 500;
+}
+
+#footer-content {
+  position: fixed;
+    bottom: 0;
+    left: auto;
+    width: 100%;
+    background-color:#f8f9fa;
+    color: #000;
+    padding: 10px;
+    font-size: 14px;
+    border-top:2px solid var(--cyan);
+}
+
+#footer-links ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer-links li{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#footer-links a, #footer-links a:hover, #footer-links a:visited{
+  text-decoration: none;
+}
+
+
+#footer-links {
+  padding: 20px 5px 5px;
+  display: flex;
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100%; /* Ajusta la altura para que ocupen todo el espacio disponible verticalmente */
+}
+
+#redes-sociales {
+  padding: 20px 5px 5px ;
+  display: flex;
+  flex-direction: row; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100%; /* Ajusta la altura para que ocupen todo el espacio disponible verticalmente */
+}
+
+.icono-red-social {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 24px;
+  color: #4e4e4e;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.icono-red-social.fb:hover {
+  color: #023972;
+}
+
+.icono-red-social.tw:hover {
+  color: #191c1c;
+}
+
+.icono-red-social.yt:hover {
+  color: #a40d08;
+}
+
+.icono-red-social.ig:hover {
+  color: #b01f7b;
+}
+
+/*--------------------------------------------------------------
+# App dashboard -- dashboard
+--------------------------------------------------------------*/
+.features{
+  padding: 40px;
+}
+
+.features .content .icon-box {
+  margin-top: 25px;
+}
+.features .content .icon-box h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 5px 0 10px 60px;
+}
+.features .content .icon-box i {
+  font-size: 36px;
+  float: left;
+  color: var(--navi);
+}
+.features .content .icon-box p {
+  font-size: 15px;
+  color: var(--navy);
+  margin-left: 60px;
+}
+
+.features .img-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.features .media-bg{
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0;
+  top: -100%;
+}
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* Oculta el botón por defecto */
+}
+
+#scroll-to-top a {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+}
+
+#scroll-to-top a:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 991px) {
+  .features .media-bg {
+    text-align: center;
+  }
+  .features .media-bg img {
+    max-width: 50%;
+  }
+}
+@media (max-width: 667px) {
+  .features .media-bg img {
+    max-width: 50%;
+  }
+  .img-container{
+    display: none;
+  }
+
+  #footer-links .liBar{
+    display:none;
+  }
+
+  #footer-content{
+    position: relative;
+  }
+
+  #frm_footer_actions{
+    margin-bottom: 0px;
+  }
+
+  #frm_footer_actions #btnPasoAgendar{
+    text-align: right;
+  }
+}
+
+/*-------------------------------------------------
+App Profile -- perfil
+----------------------------------------------------*/
+
+.profile{
+  padding: 20px;
+}
+
+.profile-form {
+  background-color: rgba(208, 212, 217, 0.2) !important;
+  padding: 20px;
+}
+
+.form-container{
+ background-color: FFF;
+}
+
+.form-footer{
+  background-color: #FFF;
+  margin-bottom: 80px;
+}
+
+/*-------------------------------------------------
+App studiesrecord -- expediente
+----------------------------------------------------*/
+.studiesrecord{
+  padding: 20px;
+}
+
+#tbEstudios.table_search{
+font-size: .9em;
+cursor: pointer;
+}
+
+.link_white,
+.link_white a,
+.link_white a:link,
+.link_white:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.link_white:hover {
+    color: #919191; 
+}
+.table-action .view{
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.table-action {
+  display: inline-block; 
+  width: auto;
+  margin: 3px; 
+}
+
+@media (max-width: 768px) {
+  .table-action {
+      display: block;
+      width: 100%; 
+      margin-bottom: 10px; 
+  }
+}
+
+.ms-n5 {
+  margin-left: -40px;
+}
+
+/*-------------------------------------------------
+App schedule -- agendar
+----------------------------------------------------*/
+
+.step_header{
+  background-color: #f5f5f5;
+}
+
+.tutorial-steps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.step-number {
+  width: 100px;
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.step-description {
+  flex-grow: 1; 
+  display: inline-block;
+  background-color: #f5f5f5;
+  padding: 15px 15px 0px 15px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.step-number.step-1 {
+  color: #FF0000; 
+}
+
+.step-number.step-2 {
+  background-color: #0d6efd; 
+}
+
+.step-number.step-3 {
+  color: #0000FF;
+}
+
+
+.schedule{
+  padding: 20px;
+}
+
+.schedule_addstudy{
+  min-height: 100vh;
+}
+
+.frm_step2_container {
+  background-color: #FFF;
+}
+
+#frm_footer_actions{
+  background-color: #FFF;
+  padding-bottom: 100px;;
+}
+
+.wz_dt_table_header{
+  font-weight: 400;
+  font-size: .8rem;
+}
+
+.wz_dt_table_body{
+  background-color: #FFF;
+  padding: 10px 5px 0px 5px;
+}
+
+
+.HRseparador{
+  padding-top: 15px;
+  color:transparent;
+}
+
+/*ShoppingCart*/
+.divShoppingCart {
+  background-color: #FFF;
+}
+
+.divShoppingCart table {
+  width: 100%;
+}
+
+#lstShoppingcart{
+  background-color: blue;
+}
+
+#tblShoppingCart{background-color: #FFF;}
+
+/*-------------------------------------------------
+App configuration -- configuracion
+----------------------------------------------------*/
+.configuration{
+  padding: 20px;
+}
+/*-------------------------------------------------
+App contact  -- contacto
+----------------------------------------------------*/
+.contact{
+  padding: 20px;
+  background-color: #FFF;
+}
+
+.contact-content{
+  margin-bottom: 0;
+}
+
+.contact .form-content{
+  background-color:rgba(208, 212, 217, 0.2);
+  padding: 10px;
+}
+.contact label{
+  font-weight:500;
+  padding: 5px;
+}
+
+.contact .form-group{
+  padding-bottom: 20px;
+}
+
+/*-------------------------------------------------
+App Agendar  -- modal
+----------------------------------------------------*/
+.modal-agenda-row {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-agenda-row:hover {
+  background-color: #dcdcdc; 
+}
+
+/*-------------------------------------------------
+App Agendar  -- Paso 1
+----------------------------------------------------*/
+#btn2 {
+  float: right;
+  display: none;
+}
+
+/* Muestra boton a paso 2 cuando input esta lleno */
+#btn2.enabled {
+  display: block !important;
+}
+
+/*-------------------------------------------------
+App Agendar Estudio -- Paso 2
+----------------------------------------------------*/
+#btnPasoAgendar{
+  display: none;
+}
+/*-------------------------------------------------
+App Agendar Cita -- Paso 3
+----------------------------------------------------*/
+
+#scheduleCal,
+.divCalendarSchedule,
+.cal-encabezado,
+.cal-horarios{
+  background-color: #FFF;
+}
+
+.cal-encabezado {
+  padding: 30px;
+  margin: auto;
+}
+
+.cal-horarios {
+  padding: 0px 30px;
+  max-height: 500px;
+  overflow-y: auto; 
+}
+
+#tblDisponibilidad thead {
+  position: sticky;
+  top: 0; 
+  background-color: #42a5f5; 
+  color: #FFF;
+}
+
+.cal-calendario {
+  padding: 0px 0px 50px;
+}
+
+#lblCurDate{
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.hr_hora{
+  text-align: center;
+  cursor:pointer;
+  
+}
+
+/* #btnAgendarCita{
+  display: none;
+} */
+
+
+#tblDisponibilidad #tbodyHorasDisponibles{
+	border-radius: 2%;
+  text-align: center;
+}
+
+#tblDisponibilidad #tbodyHorasDisponibles td{
+	background-color:#FFF;
+	color:#06a5bb;
+	border-radius: 2%;
+	border-top:0;
+	display:block;
+	border:.0.5px solid #06a5bb;
+	cursor:pointer;
+}
+
+#tblDisponibilidad #tbodyHorasDisponibles .tdENABLE:hover{
+	background-color:#439321;
+	color:white;
+}
+
+.tdEnableToggle{
+	background-color:#439321 !important;
+	color:white !important;
+}
+
+.tdDisableToggle{
+	background-color:#FF4A55 !important;
+	color:white !important;
+}
+
+#tblDisponibilidad #tbodyHorasDisponibles .tdDISABLE{
+	border: 1px solid #979595;
+	background-color: #efefef;
+	color: #666666;
+	cursor:not-allowed !important;
+}
+
+#mdlConfirmAppointment .mdlTblHeader{
+  font-weight: bold;
+  padding: 2px;
+}
+
+#mdlConfirmAppointment .mdlTblValue{
+  padding: 3px;
+}
+
+#mdlConfirmAppointment table {
+  border: 0px solid transparent !important;
+}
+
+#mdlConfirmAppointment .modal-footer{
+  border-top: 1px solid #dee2e6;
+}
+
+#mdlTblEstudios {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mdlTblEncabezados tr th{
+  font-size: .95rem;
+  font-weight:lighter !important;
+  color:rgb(41, 41, 41)
+}
+/*-----------------------------------------------------
+App Error
+-------------------------------------------------------*/
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px ;
+  font-family: 'Nexa', sans-serif;
+}
+
+.error_media{
+  width: 200px;
+}
+
+.table-responsive.tblError td {
+  text-align: center;
+}
+
+.tblError .err_img{
+  padding-bottom: 30px;
+}
+
+.tblError .err_title{
+  font-weight: 350;
+}
+
+.tblError .err_message{
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.err_link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.err_link:hover {
+  color: #FFF;
+}
+
+
+/* Style for the total row */
+#totalRow {
+  font-weight: bold;
+  border-top: 2px solid black; /* Create a solid black border on top */
+}
+
+/* Style to align the text in the last row with the columns */
+#totalRow td {
+  text-align: center;
+}
+
+/* Style to align the text in the "DURACION" and "PRECIO" columns */
+#totalTiempo, #totalPrecio {
+  text-align: right;
+}
+
+
+/* Estilo para la barra de desplazamiento vertical */
+.cal-horarios::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cal-horarios::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.cal-horarios::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+

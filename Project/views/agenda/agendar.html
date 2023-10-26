@@ -1,0 +1,172 @@
+{% extends "home.html" %}
+{% block content %}
+
+<div class="container-fluid schedule">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <h4 class="card-title">Nueva Cita</h4>
+              </div>
+
+              <div id="divDTAlert"></div>
+
+              <div class="row d-flex justify-content-center">
+                  <div class="col-md-11" id="ws_step_one">
+                    <br>
+                        <div class="col-lg-12 title-entry step_header d-flex p-1">
+                            <div class="tutorial-steps">
+                                <div class="step-number">
+                                    1
+                                </div>
+                                <div class="step-description">
+                                    <p>Paso 1: Seleccionar o registrar nuevo paciente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                      <div class="card col-lg-12 col-md-12 col-sm-12">
+                          <div class="card-body">
+                              <div class="form-group">
+                                  <label for="idpaciente"><b>ID Paciente</b></label>
+                              </div>
+                              <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="ID Paciente" name="txtIDPacienteSearch" id="txtIDPacienteSearch" readonly>
+                                  <div class="input-group-btn">
+                                      <a href="#" data-bs-toggle="modal" data-bs-target="#modalSearch" data-id="btnIDPatiente" id="btnIDPatiente" class='btn btn-primary btn-fill'>
+                                          <span class="fas fa-search"></span> Seleccionar Paciente</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <form id="wz_new_scheduleForm" name="wz_new_scheduleForm" role="form-inline" action="/agenda/selectStudy" method="post">
+                          <div class="modal-body">
+                              <div class="row step1">
+                                  <div class="col-lg-12">
+                                      <label class="wz_subtitle">Informaci&oacute;n de Paciente</label>
+                                      <hr id="hrSala">
+                                  </div>
+                                  <div class="col-md-6 col-lg-4">
+                                      <div class="form-group">
+                                          <label for="wz_new_nombre">Nombre</label>
+                                          <input type="text" id="wz_new_nombre" name="wz_new_nombre" class="form-control input_addnew" placeholder="Nombre de Paciente" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 col-lg-4">
+                                      <div class="form-group">
+                                          <label for="wz_new_apaterno">Apellido Paterno</label>
+                                          <input type="text" id="wz_new_apaterno" name="wz_new_apaterno" class="form-control input_addnew" placeholder="Apellido Paterno" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 col-lg-4">
+                                      <div class="form-group">
+                                          <label for="wz_new_amaterno">Apellido Materno</label>
+                                          <input type="text" id="wz_new_amaterno" name="wz_new_amaterno" class="form-control input_addnew" placeholder="Apellido Materno">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row step1">
+                                  <div class="col-md-6 col-lg-4">
+                                      <div class="form-group">
+                                          <label class="control-label">Sexo</label>
+                                          <select id="wz_new_sexo" name="wz_new_sexo" class="form-control input_addnew" required>
+                                              <option value="">SELECCIONAR</option>
+                                              <option value="MASCULINO">MASCULINO</option>
+                                              <option value="FEMENINO">FEMENINO</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 col-lg-4 title-entry divSelSala">
+                                      <div class="form-group">
+                                          <label class="control-label">Fecha de Nacimiento</label>
+                                          <div class="input-group date">
+                                              <input  type="date" id="wz_new_fecnac" name="wz_new_fecnac" class="form-control input_addnew"/>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-12 col-lg-4 title-entry divSelSala">
+                                      <div class="form-group">
+                                          <label class="control-label">&iquest;Primera cita en Imaxess?</label><br>
+                                          <select id="wz_new_primeravez" class="form-control input_addnew" required>
+                                              <option value="">SELECCIONAR</option>
+                                              <option value="SI">SI</option>
+                                              <option value="NO">NO</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-12">
+                                      <div class="form-group">
+                                          <label for="wz_new_notes">Notas / Observaciones</label>
+                                          <textarea id="wz_new_notes" name="wz_new_notes" class="form-control input_addnew" placeholder="Notas"  rows="3"></textarea>
+                                      </div>
+                                      <input type="hidden" id="txtIDPaciente" name="txtIDPaciente" value="">
+                                  </div>
+                                  <!-- <button type="button" id="btnPaso2" class="btn btn-success btn-fill pull-right" style="display: none;">Paso 2 : Estudios</button> -->
+                                </div>
+                              <hr>
+                              <div class="d-flex justify-content-between">
+                                  <button type="button" id="btnRegistrar" class="btn btn-primary btn-fill btn_hover_outline_primary">Registrar Paciente</button>
+                                  <button type="submit" id="btn23" class="btn btn-success btn-fill pull-right">Paso 2 : Estudios</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- MODAL SEARCH FORM -->
+<div class="col-lg-12 col-md-12 col-sm-12">
+  <div id="modalSearch" class="modal modal-wide fade" tabindex="-1" role="dialog" aria-labelledby="mysearch" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog modal-lg"> 
+          <div class="modal-content"> 
+                    
+              <div class="modal-header"> 
+                   <h4 class="modal-title">Seleccionar Paciente</h4> 
+               </div> 
+           
+              <div class="modal-body"> 
+                  <div class="inner-addon right-addon">
+                      <i class="glyphicon glyphicon-search"></i>
+                      <input type="text" id="searchBox" class="form-control" placeholder="Buscar ... (ID, Nombre, Apellidos)"><br> 
+                    </div>
+                    <div id="modal-loader" style="display: none; text-align: center;">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </div>
+                         
+                  <div id="dynamic-content"> <!-- mysql data will load in table -->                
+                      <div class="row"> 
+                          <div class="col-md-12"> 
+                              <div class="table-responsive">
+                                  <table class="table table-striped">
+                                      <thead>
+                                          <tr>
+                                              <th>ID</th>
+                                              <th>Nombre</th>
+                                              <th>Fecha de Nacimiento</th>
+                                              <th></th>
+                                          </tr>
+                                      </thead>
+                                      <tbody id="tblSearchPacientes"></tbody>
+                                  </table>    
+                              </div>                
+                          </div> 
+                      </div>       
+                   </div>             
+               </div> 
+             
+             <div class="modal-footer" style="display: block;"> 
+                  <button id="btnCloseModal" type="button" class="btn btn-outline-danger pull-right" data-bs-dismiss="modal">Cerrar</button>  
+             </div>  
+                
+        </div> 
+     </div>
+  </div>
+</div>
+
+<!--END-->
+{% endblock %}

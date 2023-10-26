@@ -1,0 +1,28 @@
+<!-- Top navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <button class="btn btn-primary mr-2" id="sidebarToggle"><i class="fa fa-list"></i></button>
+        <!-- Imagen visible en pantallas pequeñas (menos de 992px de ancho) -->
+        <a class="navbar-brand d-lg-none mr-auto" href="#">
+            <img src="/img/logo_rgb_imaxess.svg" alt="Imaxess - Club Imaxess" height="50px">
+        </a>
+        <!-- texto por defecto -->
+        <a class="navbar-brand d-none d-lg-block mr-auto" href="#">Imaxess - Club Imaxess</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse justify-content-end ml-2" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                <a class="nav-link nav-username" href="/dashboard/perfil">
+                    <i class="fa fa-hospital text-primary"></i>
+                   Cuenta : 
+                   {% if user.nombre is defined%}
+                       {{ user.nombre | safe }}
+                    {% else %}
+                        {{ username | safe }}
+                    {% endif %}
+                </a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>

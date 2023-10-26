@@ -1,0 +1,67 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-2 contact mb-4">
+    <div class="row justify-content-center contact-content">
+        <div class="col-md-10">
+            <div class="col-md-12">
+                <h3 class="text-center">Contáctanos</h3>
+                <hr>
+            </div>
+            <form id="formContact" name="formContact" method="post">
+            <div class="col-md-12 form-content rounded">
+                    <div class="form-group">
+                        <label for="contactName">Nombre:</label>
+                        <input type="text" class="form-control" id="contactName" name="contactName" pattern="[A-Za-z\s]+" required title="Ingrese su nombre, solo letras y espacios son permitidos. Ejemplo: Juan Pérez">
+                        <span class="error-message" id="contactNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Correo Electrónico:</label>
+                        <input type="email" class="form-control" id="contactEmail" name="contactEmail" required title="Ingrese su dirección de correo electrónico válida. Ejemplo: ejemplo@gmail.com">
+                        <span class="error-message" id="contactEmailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Teléfono de Contacto:</label>
+                        <input type="tel" class="form-control" id="contactPhone" name="contactPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Ejemplo: 123-456-7890" required title="Ingrese un número de teléfono válido en el formato: 123-456-7890">
+                        <span class="error-message" id="contactPhoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Mensaje:</label>
+                        <textarea class="form-control" id="contactMessage" name="contactMessage" pattern="[A-Za-z0-9\s]+" rows="3" required title="Ingrese su mensaje. Solo letras, números y espacios son permitidos."></textarea>
+                        <span class="error-message" id="contactMessageError"></span>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-md-flex justify-content-end text-center">
+                    <button type="button" class="btn btn-primary" id="btnSendMessage" name="btnSendMessage">
+                        <i class="fas fa-envelope px-1"></i>  Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-10">
+            <div class="contact-WhatsApp py-3 mb-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-success">Contacto por WhatsApp</h3>
+                        <p>¿Cómo podemos ayudarte?</p>
+                    </div>
+                    <div class="col-md-10">
+                        <form action="https://wa.me/5216641283164" method="get" id="whatsappForm">
+                            <textarea class="form-control" id="contactWAMessage" name="contactWAMessage" rows="2" required></textarea>
+                        </form>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button type="button" class="btn btn-success btn_hover_outline_success d-flex align-items-center" id="btnSendWA" name="btnSendWA">
+                            <i class="fab fa-whatsapp fa-2x px-2"></i> WhatsApp
+                        </button>
+                    </div>
+                </div>
+                <hr class="HRseparador">
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}
