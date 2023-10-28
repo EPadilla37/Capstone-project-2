@@ -1,7 +1,7 @@
 import express from "express";
 const dashboardRouter = express.Router();
-import { dashboardObject } from "../controllers/dashboardController.mjs";
-import pdfController from "../controllers/pdfController.mjs";
+import { dashboardObject } from "../controllers/dashboardController.js";
+import pdfController from "../controllers/pdfController.js";
 
 const dashboardController = dashboardObject;
 

@@ -1,9 +1,9 @@
 import express from "express";
 const agendaRouter = express.Router();
-import { agendaObject } from "../controllers/agendaController.mjs";
+import { agendaObject } from "../controllers/agendaController.js";
 const agendaController = agendaObject;
 
-agendaRouter.get("/search", agendaController.search);
+// agendaRouter.get("/search", agendaController.search);
 agendaRouter.get("/getPatientById", agendaController.getById);
 agendaRouter.get("/salaActive", agendaController.salaActive);
 agendaRouter.get("/modalidades", agendaController.modalidad);

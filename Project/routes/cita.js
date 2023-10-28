@@ -1,6 +1,6 @@
 import express from "express";
 const citaRouter = express.Router();
-import { citasObject } from "../controllers/citasController.mjs";
+import { citasObject } from "../controllers/citasController.js";
 const citaController = citasObject;
 
 citaRouter.get(

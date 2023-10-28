@@ -3,21 +3,21 @@ import path from "path";
 import nunjucks from "nunjucks";
 import session from "express-session";
 import url from "url";
-import { authenticateJWT } from "./middleware/auth.mjs";
-import { router as authRouter } from "./routes/auth.mjs";
-import { dashboardRouter } from "./routes/dashboard.mjs";
-import { agendaRouter } from "./routes/agenda.mjs";
-import { citaRouter } from "./routes/cita.mjs";
+import { authenticateJWT } from "./middleware/auth.js";
+import { router as authRouter } from "./routes/auth.js";
+import { dashboardRouter } from "./routes/dashboard.js";
+import { agendaRouter } from "./routes/agenda.js";
+import { citaRouter } from "./routes/cita.js";
 import MySQLStoreFactory from "express-mysql-session";
 
 const MySqlStore = MySQLStoreFactory(session);
-import { dbUsers } from "./db.mjs";
+import { dbUsers } from "./db.js";
 const sessionStore = new MySqlStore(dbUsers);
 
-import { errorHandler } from "./middleware/errorHandler.mjs";
+import { errorHandler } from "./middleware/errorHandler.js";
 
 // Importar las funciones de filtro nj
-import njFilters from "./utils/nj.filters.mjs";
+import njFilters from "./utils/nj.filters.js";
 
 const app = express();
 

@@ -1,11 +1,11 @@
-import { db_usuarios } from "../db.mjs";
+import { db_usuarios } from "../db.js";
 import jwt from "jsonwebtoken";
 import { promisify } from "util";
 import crypto from "crypto";
-import { User } from "../models/user.mjs";
-import { SECRET_KEY } from "../config.mjs";
+import { User } from "../models/user.js";
+import { SECRET_KEY } from "../config.js";
 import { error } from "console";
-import { alertsBS } from "../utils/alerts.mjs";
+import { alertsBS } from "../utils/alerts.js";
 
 const userModel = {
   login: async (req, res, next) => {
@@ -58,7 +58,8 @@ const userModel = {
         if (err) {
           console.error(err);
         }
-        res.redirect("/login"); // Redirige a la página principal o a donde desees
+        console.log(`redirecting with session: ${JSON.stringify(req.session)}`);
+        res.redirect("/login"); 
       });
     } catch (err) {
       return next(err);

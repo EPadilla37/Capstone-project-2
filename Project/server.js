@@ -1,4 +1,4 @@
-import { app } from "./app.mjs";
+import { app } from "./app.js";
 const PORT = process.env.PORT || 3000;
 
 // Start the server

@@ -1,5 +1,5 @@
 import { promisify } from "util";
-import { db_usuarios, db_agenda } from "../db.mjs";
+import { db_usuarios, db_agenda } from "../db.js";
 import { error } from "console";
 const db_usuarios_query = promisify(db_usuarios.query).bind(db_usuarios);
 const db_agenda_query = promisify(db_agenda.query).bind(db_agenda);

@@ -1,4 +1,4 @@
-import { Expediente } from "../models/expediente.mjs";
+import { Expediente } from "../models/expediente.js";
 import PDFDocument from "pdfkit";
 import { JSDOM } from "jsdom";
 import { convert } from "html-to-text";
@@ -6,7 +6,7 @@ import pdf from "html-pdf";
 import fs from "fs";
 
 import nunjucks from "nunjucks";
-import { formatDate } from "../utils/dates.mjs";
+import { formatDate } from "../utils/dates.js";
 import QRCode from "qrcode";
 import { createCanvas } from "canvas";
 import path from "path";

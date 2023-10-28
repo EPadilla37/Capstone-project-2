@@ -1,9 +1,9 @@
 import { promisify } from "util";
-import { db_usuarios, db_agenda } from "../db.mjs";
+import { db_usuarios, db_agenda } from "../db.js";
 const db_usuarios_query = promisify(db_usuarios.query).bind(db_usuarios);
 const db_agenda_query = promisify(db_agenda.query).bind(db_agenda);
 import bcrypt from "bcrypt";
-import { BCRYPT_WORK_FACTOR } from "../config.mjs";
+import { BCRYPT_WORK_FACTOR } from "../config.js";
 
 // Function to format date in YYYY-MM-DD format
 function formatDate(date) {

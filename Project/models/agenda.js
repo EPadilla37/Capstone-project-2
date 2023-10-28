@@ -1,8 +1,8 @@
 import { promisify } from "util";
-import { db_usuarios, db_agenda } from "../db.mjs";
+import { db_usuarios, db_agenda } from "../db.js";
 const db_usuarios_query = promisify(db_usuarios.query).bind(db_usuarios);
 const db_agenda_query = promisify(db_agenda.query).bind(db_agenda);
-import { alertsBS } from "../utils/alerts.mjs";
+import { alertsBS } from "../utils/alerts.js";
 
 class Agenda {
   static async getModalidad() {

@@ -1,6 +1,6 @@
 /** Middleware for handling req authorization for routes. */
 import jwt from "jsonwebtoken";
-import {SECRET_KEY} from "../config.mjs";
+import {SECRET_KEY} from "../config.js";
 
 
 /** Middleware: Authenticate user. */

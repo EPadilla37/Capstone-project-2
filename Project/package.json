@@ -1,41 +1,52 @@
 {
-  "name": "b2b",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.mjs",
-  "type": "module",
-  "scripts": {
-    "dev": "nodemon server.mjs"
-  },
-  "nodemonConfig": {
-    "ext": "js,mjs,cjs,json,html,css"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "canvas": "^2.11.2",
-    "cheerio": "^1.0.0-rc.12",
-    "chokidar": "^3.5.3",
-    "dom-parser": "^0.1.6",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-handlebars": "^7.1.1",
-    "express-mysql-session": "^3.0.0",
-    "express-session": "^1.17.3",
-    "hbs": "^4.2.0",
-    "html-pdf": "^3.0.1",
-    "html-to-text": "^9.0.5",
-    "jsdom": "^22.1.0",
-    "jsonwebtoken": "^9.0.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.6.1",
-    "nodemailer": "^6.9.5",
-    "nunjucks": "^3.2.4",
-    "passport": "^0.6.0",
-    "pdfkit": "^0.13.0",
-    "qrcode": "^1.5.3",
-    "winston": "^3.10.0"
-  }
+	"name": "b2b",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.mjs",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon server.mjs",
+		"test": "node node_modules/jest/bin/jest"
+	},
+	"nodemonConfig": {
+		"ext": "js,cjs,json,html,css"
+	},
+	"jest": {
+		"type": "commonjs"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^5.1.0",
+		"canvas": "^2.11.2",
+		"cheerio": "^1.0.0-rc.12",
+		"chokidar": "^3.5.3",
+		"dom-parser": "^0.1.6",
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"express-handlebars": "^7.1.1",
+		"express-mysql-session": "^3.0.0",
+		"express-session": "^1.17.3",
+		"hbs": "^4.2.0",
+		"html-pdf": "^3.0.1",
+		"html-to-text": "^9.0.5",
+		"jsdom": "^22.1.0",
+		"jsonwebtoken": "^9.0.1",
+		"mysql": "^2.18.1",
+		"mysql2": "^3.6.1",
+		"nodemailer": "^6.9.5",
+		"nunjucks": "^3.2.4",
+		"passport": "^0.6.0",
+		"pdfkit": "^0.13.0",
+		"qrcode": "^1.5.3",
+		"winston": "^3.10.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.23.2",
+		"@babel/preset-env": "^7.23.2",
+		"babel-jest": "^29.7.0",
+		"jest": "^29.7.0",
+		"supertest": "^6.3.3"
+	}
 }

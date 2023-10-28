@@ -1,16 +1,15 @@
-import { User } from "../models/user.mjs";
-import { Agenda } from "../models/agenda.mjs";
+import { User } from "../models/user.js";
+import { Agenda } from "../models/agenda.js";
 import session from "express-session";
 import jwt from "jsonwebtoken";
 import { promisify } from "util";
-import { SECRET_KEY } from "../config.mjs";
+import { SECRET_KEY } from "../config.js";
 import { error } from "console";
 import nunjucks from "nunjucks";
-import { db_usuarios } from "../db.mjs";
+import { db_usuarios } from "../db.js";
 import { json } from "express";
 
-import { formatString } from "../utils/format.mjs";
-import { agendaRouter } from "../routes/agenda.mjs";
+import { formatString } from "../utils/format.js";
 
 const agendaObject = {
   getEstudiosInSession: async (req, res, next) => {
@@ -33,6 +32,8 @@ const agendaObject = {
     try {
       const { estudio, sala } = req.body;
 
+      console.log(JSON.stringify(req.body));
+
       if (estudio && sala) {
         if (!req.session.estudios) {
           req.session.estudios = [];
@@ -54,6 +55,8 @@ const agendaObject = {
         if (req.session.modalidades.length === 0) {
           req.session.modalidades = sala; // cambie push(); *solo es 1 obj sala
         }
+
+        console.log(`session: ${JSON.stringify(req.session)}`);
 
         res.sendStatus(200);
       } else {

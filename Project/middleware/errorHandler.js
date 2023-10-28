@@ -1,4 +1,4 @@
-import logger from "../utils/logger.mjs";
+import logger from "../utils/logger.js";
 
 const errorHandler = (error, req, res, next) => {
   if (!error) {
