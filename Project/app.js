@@ -21,10 +21,9 @@ import njFilters from "./utils/nj.filters.js";
 
 const app = express();
 
-//sha256 ===> imaxess2023
 app.use(
   session({
-    secret: "0a096633595016e7abb62982a2c64d52ac7fc323742267d51977e449e91e973e",
+    secret: "your-secret-key",
     resave: false,
     saveUninitialized: false,
     store: sessionStore,
@@ -67,7 +66,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.locals.user = req.session.user; // Esto hace que "user" esté disponible globalmente
+  res.locals.user = req.session.user; 
   next();
 });
 
@@ -89,6 +88,6 @@ app.use((req, res, next) => {
   next(error);
 });
 
-app.use(errorHandler); //manejo de errores
+app.use(errorHandler); 
 
 export { app };

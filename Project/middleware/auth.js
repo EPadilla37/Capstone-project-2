@@ -7,7 +7,6 @@ import {SECRET_KEY} from "../config.js";
 
 function authenticateJWT(req, res, next) {
   try {
-    // Retrieve the token from the user's session or headers
     const token = req.session.token || req.headers.authorization.split(" ")[1];
     // const token = req.session.token;
 
@@ -18,7 +17,7 @@ function authenticateJWT(req, res, next) {
 
     // Verify the token and attach the user payload to the request
     const payload = jwt.verify(token, SECRET_KEY);
-    req.user = payload; // Create a current user
+    req.user = payload; 
     return next();
   } catch (err) {
     return res.redirect('/auth/login');
@@ -49,7 +48,7 @@ function ensureCorrectUser(req, res, next) {
     return next({ status: 401, message: "Unauthorized" });
   }
 }
-// end
+
 
 
 export{authenticateJWT, ensureLoggedIn, ensureCorrectUser};
