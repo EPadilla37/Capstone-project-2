@@ -1,10 +1,6 @@
-import { db_usuarios } from "../db.js";
 import jwt from "jsonwebtoken";
-import { promisify } from "util";
-import crypto from "crypto";
 import { User } from "../models/user.js";
 import { SECRET_KEY } from "../config.js";
-import { error } from "console";
 import { alertsBS } from "../utils/alerts.js";
 
 const userModel = {

@@ -1,16 +1,7 @@
-import { User } from "../models/user.js";
 import { Agenda } from "../models/agenda.js";
-import session from "express-session";
-import { promisify } from "util";
-import { error } from "console";
 import nunjucks from "nunjucks";
-import { json } from "express";
-
-import { formatString } from "../utils/format.js";
-import { agendaRouter } from "../routes/agenda.js";
 import { formatDate } from "../utils/dates.js";
 import { alertsBS } from "../utils/alerts.js";
-import { agendaObject } from "./agendaController.js";
 import { sendConfirmationEmail } from "../utils/fn.nodemailer.js";
 
 const citasObject = {

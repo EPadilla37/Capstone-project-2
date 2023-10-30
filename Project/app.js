@@ -1,8 +1,6 @@
 import express from "express";
-import path from "path";
 import nunjucks from "nunjucks";
 import session from "express-session";
-import url from "url";
 import { authenticateJWT } from "./middleware/auth.js";
 import { router as authRouter } from "./routes/auth.js";
 import { dashboardRouter } from "./routes/dashboard.js";
@@ -22,12 +20,12 @@ import njFilters from "./utils/nj.filters.js";
 const app = express();
 
 app.use(
-  session({
-    secret: "your-secret-key",
-    resave: false,
-    saveUninitialized: false,
-    store: sessionStore,
-  })
+	session({
+		secret: "your-secret-key",
+		resave: false,
+		saveUninitialized: false,
+		store: sessionStore,
+	})
 );
 
 var env = nunjucks.configure("views", {
@@ -88,6 +86,6 @@ app.use((req, res, next) => {
   next(error);
 });
 
-app.use(errorHandler); 
+app.use(errorHandler); //manejo de errores
 
 export { app };

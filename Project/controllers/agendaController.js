@@ -1,15 +1,5 @@
 import { User } from "../models/user.js";
 import { Agenda } from "../models/agenda.js";
-import session from "express-session";
-import jwt from "jsonwebtoken";
-import { promisify } from "util";
-import { SECRET_KEY } from "../config.js";
-import { error } from "console";
-import nunjucks from "nunjucks";
-import { db_usuarios } from "../db.js";
-import { json } from "express";
-
-import { formatString } from "../utils/format.js";
 
 const agendaObject = {
   getEstudiosInSession: async (req, res, next) => {

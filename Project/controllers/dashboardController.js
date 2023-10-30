@@ -1,15 +1,10 @@
 import { User } from "../models/user.js";
 import { Expediente } from "../models/expediente.js";
 import { promisify } from "util";
-import { SECRET_KEY } from "../config.js";
-import { error } from "console";
 import nunjucks from "nunjucks";
 import { db_usuarios } from "../db.js";
-import session from "express-session";
-import { throws } from "assert";
 import { alertsBS } from "../utils/alerts.js";
 import { sendEmail } from "../utils/fn.nodemailer.js";
-import { constrainedMemory } from "process";
 
 const db_usuarios_query = promisify(db_usuarios.query).bind(db_usuarios);
 
