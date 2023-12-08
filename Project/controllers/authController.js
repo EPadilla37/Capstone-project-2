@@ -7,7 +7,9 @@ const userModel = {
   login: async (req, res, next) => {
     try {
       let { username, password } = req.body;
+      console.log(`this is user and pass: ${username}, ${password}`);
       if (await User.authenticate(username, password)) {
+        console.log(`we get back from authenticate: ${username}`);
         let token = jwt.sign({ username }, SECRET_KEY);
 
         //Storage user data -- session
@@ -22,7 +24,7 @@ const userModel = {
           "Acceso médico en línea, seguridad, colaboración y ventajas exclusivas.";
         const msgHtml = alertsBS.createAlert(
           "success",
-          `Bienvenido a Club Imaxess ${req.session.user.nombre}`,
+          `Bienvenido ${req.session.user.nombre}`,
           message
         );
         return res.render("dashboard.html", {

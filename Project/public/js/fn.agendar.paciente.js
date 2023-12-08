@@ -8,13 +8,14 @@ $(document).ready(function () {
   if ($searchBox.length && $modalLoader.length) {
     $searchBox.on("keyup", async function () {
       searchTerm = $searchBox.val().trim();
-      if (searchTerm.length >= 2) {
+      if (1 === 1 ) {
         try {
           $modalLoader.css("display", "block");
 
           const response = await fetch(
-            `/agenda/search?criteria=nombre&searchTerm=${searchTerm}`
-          );
+						// `/agenda/search?criteria=nombre&searchTerm=${searchTerm}`
+						`/agenda/search?criteria=nombre`
+					);
           if (response.ok) {
             const results = await response.json();
             renderResults(results, $tblSearchPacientes);

@@ -12,19 +12,21 @@ class Expediente {
    * @returns {Promise} - Una promesa que resuelve en los datos del expediente médico o se rechaza con un error.
    */
   static async getExpediente(idReferencia) {
+    console.log(idReferencia);
     // Consulta SQL para obtener información del expediente médico
-    const qstring = `SELECT
-      pac.pac_id_paciente AS id_paciente,
-      pac.pac_appaterno AS apellido_paterno,
-      pac.pac_apmaterno AS apellido_materno,
-      pac.pac_nombre AS nombre,
-      e.est_id_estudio AS id_estudio,
-      e.est_descripcion AS estudio,
-      e.est_id_modalidad AS id_modalidad,
-      a.age_id_cita AS id_cita,
-      a.age_fecha AS fecha,
-      a.age_id_clinica AS institucion,
-      c.cdv_url AS viewer_url
+    const qstring = `
+    SELECT
+        pac.pac_id_paciente AS id_paciente,
+        pac.pac_appaterno AS apellido_paterno,
+        pac.pac_apmaterno AS apellido_materno,
+        pac.pac_nombre AS nombre,
+        e.est_id_estudio AS id_estudio,
+        e.est_descripcion AS estudio,
+        e.est_id_modalidad AS id_modalidad,
+        a.age_id_cita AS id_cita,
+        a.age_fecha AS fecha,
+        a.age_id_clinica AS institucion,
+        c.cdv_url AS viewer_url
     FROM
         procesos p
         JOIN agenda a ON p.pro_id_cita = a.age_id_cita
@@ -32,17 +34,9 @@ class Expediente {
         JOIN pacientes pac ON a.age_id_paciente = pac.pac_id_paciente
         JOIN clouddicomviewer c ON a.age_id_cita = c.cdv_id_cita AND c.cdv_status = 1
     WHERE
-        a.age_id_clinica = ${idReferencia}
-    LIMIT 20`;
+        a.age_id_clinica = ?`;
 
-    // Realiza la consulta a la base de datos
-    // if (idReferencia) {
-
-    // }else{
-    //   console.log("Tratando buscar expediente sin id");
-    // }
-    //console.log(idReferencia);
-    const result = await db_agenda_query(qstring);
+		const result = await db_agenda_query(qstring, [idReferencia]);
 
     if (result.length > 0) {
       let user = result;

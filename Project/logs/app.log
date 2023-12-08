@@ -26,3 +26,101 @@
 {"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3000/dashboard/agendar","timestamp":"2023-10-30T18:30:49.122Z","username":"imaxessprivado@imaxess.com"}
 {"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3000/dashboard/agendar","timestamp":"2023-10-30T18:30:49.362Z","username":"imaxessprivado@imaxess.com"}
 {"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3000/dashboard/agendar","timestamp":"2023-10-30T18:30:49.811Z","username":"imaxessprivado@imaxess.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3000/dashboard/agendar","timestamp":"2023-10-30T18:39:13.843Z","username":"imaxessprivado@imaxess.com"}
+{"level":"error","message":"No se pudo obtener el expediente","referrer":"http://localhost:3000/dashboard/expediente","timestamp":"2023-10-30T18:59:53.305Z","username":"imaxessprivado@imaxess.com"}
+{"level":"error","message":"read ECONNRESET","referrer":"http://localhost:3002/","timestamp":"2023-11-20T20:24:40.966Z","username":"SysLogin"}
+{"level":"error","message":"Can't add new command when connection is in closed state","referrer":"http://localhost:3002/auth/login","timestamp":"2023-11-20T20:24:45.043Z","username":"SysLogin"}
+{"level":"error","message":"Can't add new command when connection is in closed state","referrer":"http://localhost:3002/","timestamp":"2023-11-20T20:33:40.577Z","username":"SysLogin"}
+{"level":"error","message":"Can't add new command when connection is in closed state","referrer":"http://localhost:3002/","timestamp":"2023-11-20T20:34:11.372Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T19:12:36.752Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T19:13:35.081Z","username":"SysLogin"}
+{"level":"error","message":"Error al obtener el perfil del usuario.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T19:13:36.822Z","username":"SysLogin"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'username')","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T19:13:38.198Z","username":"SysLogin"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'username')","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-22T19:13:40.310Z","username":"SysLogin"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'username')","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-22T19:13:46.472Z","username":"SysLogin"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'username')","referrer":"http://localhost:3005/dashboard/expediente","timestamp":"2023-11-22T20:33:56.171Z","username":"SysLogin"}
+{"level":"error","message":"Error al obtener el perfil del usuario.","referrer":"http://localhost:3005/dashboard/expediente","timestamp":"2023-11-22T20:36:36.920Z","username":"SysLogin"}
+{"level":"error","message":"Error al obtener el perfil del usuario.","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T20:36:38.019Z","username":"SysLogin"}
+{"level":"error","message":"Error al obtener el perfil del usuario.","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T20:36:38.931Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:38:48.866Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:39:46.337Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:40:25.338Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:41:17.567Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:41:58.877Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:42:10.954Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:43:23.109Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:44:22.935Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:44:38.389Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:44:50.442Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:45:20.003Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:45:29.027Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:46:36.494Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:46:52.755Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/","timestamp":"2023-11-22T20:50:10.924Z","username":"SysLogin"}
+{"level":"error","message":"No se pudo obtener el usuario de la base de datos","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:52:16.916Z","username":"SysLogin"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T20:59:49.667Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-22T21:00:09.396Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-22T21:00:12.232Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-22T21:00:12.243Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-22T21:00:12.735Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/contacto","timestamp":"2023-11-22T21:00:25.087Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T21:01:31.715Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T21:01:56.970Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T21:09:16.562Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T21:15:14.232Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/expediente","timestamp":"2023-11-22T21:15:15.362Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T21:15:34.611Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T21:24:36.902Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T21:31:30.609Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/dashboard/expediente","timestamp":"2023-11-22T21:31:32.726Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/dashboard/expediente","timestamp":"2023-11-22T21:31:33.707Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/dashboard/perfil","timestamp":"2023-11-22T21:31:37.166Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T21:43:23.127Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T21:45:36.066Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T21:50:53.694Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T22:11:46.658Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La página que estás buscando no se encuentra.","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T22:31:25.831Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Table 'fake_agenda.procesos' doesn't exist","referrer":"http://localhost:3005/auth/login","timestamp":"2023-11-22T23:11:49.115Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Can't add new command when connection is in closed state","referrer":"http://localhost:3005/","timestamp":"2023-11-23T20:53:40.054Z","username":"SysLogin"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:44:38.952Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:44:39.030Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:44:39.223Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:44:39.656Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:45.158Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:45.662Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:45.789Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:45.911Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:46.012Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:46.084Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:46.197Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:46.493Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:49.390Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:47:49.534Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:48:28.497Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:48:29.344Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:48:29.518Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:48:29.613Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"La solicitud contiene errores de sintaxis.","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2023-11-28T18:48:29.900Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:11:39.610Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:11:48.324Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:13:12.842Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:13:19.962Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:15:16.579Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:15:21.325Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T19:15:21.509Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:20:02.216Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T19:20:02.329Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T19:20:05.550Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T19:20:18.990Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T19:33:43.359Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T19:33:52.735Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2023-11-28T19:34:21.884Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Error en los datos enviados. Verifique los campos.","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T19:34:22.051Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"next is not a function","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:11:03.917Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Table 'fake_agenda.cancelaciones' doesn't exist","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:11:16.544Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"next is not a function","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:11:33.299Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Table 'fake_agenda.cancelaciones' doesn't exist","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:11:36.967Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"next is not a function","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:25:54.747Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Table 'fake_agenda.cancelaciones' doesn't exist","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:25:57.714Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"next is not a function","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:39:43.393Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Table 'fake_agenda.cancelaciones' doesn't exist","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:39:45.695Z","username":"fakeemail1@fake.com"}

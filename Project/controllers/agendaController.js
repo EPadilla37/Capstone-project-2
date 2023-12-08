@@ -22,8 +22,6 @@ const agendaObject = {
     try {
       const { estudio, sala } = req.body;
 
-      console.log(JSON.stringify(req.body));
-
       if (estudio && sala) {
         if (!req.session.estudios) {
           req.session.estudios = [];
@@ -45,8 +43,6 @@ const agendaObject = {
         if (req.session.modalidades.length === 0) {
           req.session.modalidades = sala; // cambie push(); *solo es 1 obj sala
         }
-
-        console.log(`session: ${JSON.stringify(req.session)}`);
 
         res.sendStatus(200);
       } else {
@@ -155,7 +151,7 @@ const agendaObject = {
     try {
       const { criteria, searchTerm } = req.query;
       const idInstitucion = req.session.user.idReferencia;
-      if (criteria && searchTerm) {
+      if (criteria) {
         const results = await User.getPatientInfo(
           criteria,
           searchTerm,

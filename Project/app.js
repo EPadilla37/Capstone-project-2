@@ -1,7 +1,7 @@
 import express from "express";
 import nunjucks from "nunjucks";
 import session from "express-session";
-import { authenticateJWT } from "./middleware/auth.js";
+import { authenticateJWT, ensureLoggedIn } from "./middleware/auth.js";
 import { router as authRouter } from "./routes/auth.js";
 import { dashboardRouter } from "./routes/dashboard.js";
 import { agendaRouter } from "./routes/agenda.js";
@@ -21,7 +21,7 @@ const app = express();
 
 app.use(
 	session({
-		secret: "your-secret-key",
+		secret: "0a096633595016e7abb62982a2c64d52ac7fc323742267d51977e449e91e973e",
 		resave: false,
 		saveUninitialized: false,
 		store: sessionStore,
@@ -73,7 +73,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRouter);
-app.use(authenticateJWT);
+app.use(authenticateJWT, ensureLoggedIn);
 app.use("/dashboard", dashboardRouter);
 app.use("/logout", authRouter);
 app.use("/agenda", agendaRouter);

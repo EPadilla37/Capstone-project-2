@@ -14,7 +14,6 @@ function authenticateJWT(req, res, next) {
       // Redirect to login if token is missing
       return res.redirect('/auth/login');
     }
-
     // Verify the token and attach the user payload to the request
     const payload = jwt.verify(token, SECRET_KEY);
     req.user = payload; 

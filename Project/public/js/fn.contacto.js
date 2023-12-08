@@ -3,8 +3,7 @@ $(document).ready(function () {
   $("#btnSendWA").click(function () {
     var message = $("#contactWAMessage").val();
     var whatsappURL =
-      "https://wa.me/5216641283164/?text=ClubImaxess :: " +
-      encodeURIComponent(message);
+      "Test";
     if (message) window.open(whatsappURL, "_blank");
   });
 

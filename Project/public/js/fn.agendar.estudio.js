@@ -422,18 +422,19 @@ $(document).ready(function () {
   });
 
   function displayImages(imageUrlsArray) {
-    imageSlider.empty();
-    imageContainer.empty(); 
+		imageSlider.empty();
+		imageContainer.empty();
 
-    imageUrlsArray.forEach((imageUrls) => {
-      imageUrls.forEach((imageUrl) => {
-        const img = $("<img>")
-          .attr("src", imageUrl.ind_url)
-          .addClass("img-fluid");
-        imageContainer.append(img); 
-      });
-    });
-  }
+		const confirmationText =
+			"Please click on 'He leído las indicaciones para los estudios' button to ensure that you read the prerequisites for this study.";
+
+		const confirmationMessage = $("<p>")
+			.text(confirmationText)
+			.addClass("confirmation-message");
+
+		imageContainer.append(confirmationMessage);
+	}
+
 });
 
 
