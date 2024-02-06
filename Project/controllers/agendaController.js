@@ -165,6 +165,22 @@ const agendaObject = {
       return next(err);
     }
   },
+  
+  searchAll: async (req, res, next) => {
+    try {
+      const idInstitucion = req.session.user.idReferencia;
+      if (idInstitucion) {
+        const results = await User.getPatientInfoAll(
+          idInstitucion
+        );
+        res.json(results);
+      } else {
+        res.status(400).json({ error: "Missing criteria or search term." });
+      }
+    } catch (err) {
+      return next(err);
+    }
+  },
 
   getById: async (req, res, next) => {
     try {

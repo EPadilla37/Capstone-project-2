@@ -3,14 +3,14 @@ import mysql from "mysql2";
 const db_agenda = mysql.createConnection({
 	host: "localhost",
 	user: "root",
-	password: "",
+	password: "padilla",
 	database: "fake_agenda",
 });
 
 const db_usuarios = mysql.createConnection({
 	host: "localhost",
 	user: "root",
-	password: "",
+	password: "padilla",
 	database: "fake_db_usuarios",
 });
 
@@ -34,7 +34,7 @@ db_usuarios.connect((err) => {
 const dbUsers = {
 	host: "localhost",
 	user: "root",
-	password: "",
+	password: "padilla",
 	database: "fake_db_usuarios",
 };
 

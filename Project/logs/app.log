@@ -124,3 +124,13 @@
 {"level":"error","message":"Table 'fake_agenda.cancelaciones' doesn't exist","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:25:57.714Z","username":"fakeemail1@fake.com"}
 {"level":"error","message":"next is not a function","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:39:43.393Z","username":"fakeemail1@fake.com"}
 {"level":"error","message":"Table 'fake_agenda.cancelaciones' doesn't exist","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2023-11-28T20:39:45.695Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Table 'fake_db_usuarios.usuarios' doesn't exist","referrer":"http://localhost:3005/","timestamp":"2024-02-06T19:36:52.340Z","username":"SysLogin"}
+{"level":"error","message":"Incorrect DATE value: '0000-00-00'","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2024-02-06T19:58:23.720Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Incorrect DATE value: '0000-00-00'","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2024-02-06T19:58:25.142Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Incorrect DATE value: '0000-00-00'","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2024-02-06T19:58:25.382Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Incorrect DATE value: '0000-00-00'","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2024-02-06T19:58:25.613Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Incorrect DATE value: '0000-00-00'","referrer":"http://localhost:3005/dashboard/agendar","timestamp":"2024-02-06T20:05:42.306Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Truncated incorrect DOUBLE value: 'undefined'","referrer":"http://localhost:3005/agenda/selectStudy","timestamp":"2024-02-06T20:11:34.567Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"next is not a function","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2024-02-06T20:11:43.215Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"Table 'fake_agenda.cancelaciones' doesn't exist","referrer":"http://localhost:3005/agenda/agendarCita","timestamp":"2024-02-06T20:11:56.702Z","username":"fakeemail1@fake.com"}
+{"level":"error","message":"(C:\\Users\\Ernesto\\Documents\\Ernesto\\Capstone-project-2\\Project\\views\\dashboard.html)\n  Template render error: (C:\\Users\\Ernesto\\Documents\\Ernesto\\Capstone-project-2\\Project\\views\\partials\\sidebar.html) [Line 17, Column 9]\n  unexpected token: <","referrer":"http://localhost:3005/","timestamp":"2024-02-06T20:20:53.666Z","username":"fakeemail1@fake.com"}

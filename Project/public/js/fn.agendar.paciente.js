@@ -6,29 +6,55 @@ $(document).ready(function () {
   let searchTerm = "";
 
   if ($searchBox.length && $modalLoader.length) {
-    $searchBox.on("keyup", async function () {
-      searchTerm = $searchBox.val().trim();
-      if (1 === 1 ) {
-        try {
-          $modalLoader.css("display", "block");
+    // When the modal is shown, immediately perform the search
+    $("#modalSearch").on("show.bs.modal", async function () {
+      try {
+        $modalLoader.css("display", "block");
 
-          const response = await fetch(
-						// `/agenda/search?criteria=nombre&searchTerm=${searchTerm}`
-						`/agenda/search?criteria=nombre`
-					);
-          if (response.ok) {
-            const results = await response.json();
-            renderResults(results, $tblSearchPacientes);
-          } else {
-            console.error("Response not OK");
-          }
-        } catch (error) {
-          console.error("Error:", error);
-        } finally {
-          $modalLoader.css("display", "none");
+        const response = await fetch("/agenda/search?criteria=nombre");
+        if (response.ok) {
+          const results = await response.json();
+          renderResults(results, $tblSearchPacientes);
+        } else {
+          console.error("Response not OK");
         }
-      } else {
-        $tblSearchPacientes.html("");
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        $modalLoader.css("display", "none");
+      }
+    });
+
+    // Click event handler for selecting a patient
+    $tblSearchPacientes.on("click", ".modal-agenda-row", async function () {
+      const result = $(this).data("result");
+
+      try {
+        const detailedResponse = await fetch(`/agenda/getPatientById?patientId=${result.id}`);
+        if (detailedResponse.ok) {
+          const detailedPatientInfo = await detailedResponse.json();
+
+          // Populate input fields
+          $("#txtIDPacienteSearch").val(result.id);
+          $("#txtIDPaciente").val(result.id);
+          $("#wz_new_nombre").val(detailedPatientInfo.nombre);
+          $("#wz_new_apaterno").val(detailedPatientInfo.apellido_paterno);
+          $("#wz_new_amaterno").val(detailedPatientInfo.apellido_materno);
+          $("#wz_new_sexo").val(detailedPatientInfo.sexo);
+          $("#wz_new_fecnac").val(detailedPatientInfo.fecha_nacimiento);
+          $("#wz_new_primeravez").val("NO");
+
+          // Automatically select the correct value for 'sexo' select element
+          const $sexoSelect = $("#wz_new_sexo");
+          $sexoSelect.val(detailedPatientInfo.sexo);
+
+          // Close the modal
+          $("#modalSearch").modal("hide");
+        } else {
+          console.error("Response not OK");
+        }
+      } catch (error) {
+        console.error("Error:", error);
       }
     });
   }
@@ -36,7 +62,7 @@ $(document).ready(function () {
   function renderResults(results, resultsTbody) {
     resultsTbody.html(""); // Clear previous results
     $.each(results, function (index, result) {
-      const row = $("<tr></tr>").addClass("modal-agenda-row");
+      const row = $("<tr></tr>").addClass("modal-agenda-row").data("result", result);
 
       const idCell = $("<td></td>");
       const nombreCell = $("<td></td>");
@@ -47,39 +73,6 @@ $(document).ready(function () {
       fechaNacimientoCell.text(result.fecha_nacimiento);
 
       row.append(idCell, nombreCell, fechaNacimientoCell);
-
-      row.on("click", async function () {
-        try {
-          const detailedResponse = await fetch(
-            `/agenda/getPatientById?patientId=${result.id}`
-          );
-          if (detailedResponse.ok) {
-            const detailedPatientInfo = await detailedResponse.json();
-
-            // Populate input fields
-            $("#txtIDPacienteSearch").val(result.id);
-            $("#txtIDPaciente").val(result.id);
-            $("#wz_new_nombre").val(detailedPatientInfo.nombre);
-            $("#wz_new_apaterno").val(detailedPatientInfo.apellido_paterno);
-            $("#wz_new_amaterno").val(detailedPatientInfo.apellido_materno);
-            $("#wz_new_sexo").val(detailedPatientInfo.sexo);
-            $("#wz_new_fecnac").val(detailedPatientInfo.fecha_nacimiento);
-            $("#wz_new_primeravez").val("NO");
-
-            // Automatically select the correct value for 'sexo' select element
-            const $sexoSelect = $("#wz_new_sexo");
-            $sexoSelect.val(detailedPatientInfo.sexo);
-
-            // Close the modal
-            $("#modalSearch").modal("hide");
-          } else {
-            console.error("Response not OK");
-          }
-        } catch (error) {
-          console.error("Error:", error);
-        }
-      });
-
       resultsTbody.append(row);
     });
   }

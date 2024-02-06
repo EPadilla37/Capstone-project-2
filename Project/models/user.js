@@ -112,6 +112,27 @@ class User {
 		}));
 		return formattedResult;
 	}
+	
+	static async getPatientInfoAll(idClinic) {
+		let query = `
+        SELECT
+        p.pac_id_paciente AS id,
+        CONCAT(p.pac_apmaterno, ' ', p.pac_appaterno, ' ', p.pac_nombre) AS nombre,
+        p.pac_fecnac AS fecha_nacimiento,
+        p.pac_sexo AS sexo
+        FROM
+        pacientes p
+        JOIN agenda a ON p.pac_id_paciente = a.age_id_paciente`;
+
+		const result = await db_agenda_query(query);
+		console.log(JSON.stringify(result));
+		const formattedResult = result.map((row) => ({
+			id: row.id,
+			nombre: row.nombre,
+			fecha_nacimiento: formatDate(row.fecha_nacimiento),
+		}));
+		return formattedResult;
+	}
 
 	static async getPatientById(patientId) {
 		const query = `
